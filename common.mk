@@ -464,5 +464,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+# Not needed as common tree will be merged with main tree
 # Inherit from the proprietary files makefile.
-$(call inherit-product, vendor/oneplus/sm8350-common/sm8350-common-vendor.mk)
+#$(call inherit-product, vendor/oneplus/sm8350-common/sm8350-common-vendor.mk)

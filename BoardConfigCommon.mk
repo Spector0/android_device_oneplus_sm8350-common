@@ -229,5 +229,6 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# Not needed as common tree will be merged with main tree
 # Include the proprietary files BoardConfig.
-include vendor/oneplus/sm6375-common/BoardConfigVendor.mk
+#include vendor/oneplus/sm6375-common/BoardConfigVendor.mk
