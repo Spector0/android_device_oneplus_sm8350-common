@@ -36,3 +36,7 @@ on property:ro.boot.prjname=20820
 
 on property:ro.boot.prjname=20821
     setprop ro.boot.hardware.revision "IN"
+
+# Oscar
+on property:ro.boot.prjname=21341
+	setprop ro.boot.hardware.revision "IN"

@@ -370,8 +370,12 @@ case "$target" in
                 setprop vendor.display.enhance_idle_time 1
                 setprop vendor.netflix.bsp_rev ""
                 ;;
-             518|561)
-                setprop vendor.media.target.version 3
+             518)
+                setprop vendor.netflix.bsp_rev ""
+                ;;
+            *)
+                # default case is for bengal
+                setprop vendor.netflix.bsp_rev "Q6115-31409-1"
                 ;;
         esac
         ;;
@@ -502,6 +506,18 @@ case "$product" in
         *)
         ;;
 esac
+
+# Set lcd density for tyr 1200*2000
+tyr=`getprop ro.boot.prjname`
+
+case "$tyr" in
+    "21653" | "21654" | "21746" | "2174A" )
+     setprop vendor.display.lcd_density 240
+     ;;
+    *)
+    ;;
+esac
+
 # Setup display nodes & permissions
 # HDMI can be fb1 or fb2
 # Loop through the sysfs nodes and determine

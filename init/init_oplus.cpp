@@ -39,8 +39,8 @@ void vendor_load_properties() {
 
     switch (prjname) {
         // lunaa
-        case 21603: // CN
-            OverrideProperty("ro.product.product.model", "RMX3361");
+        case 21341: // IN
+            OverrideProperty("ro.product.product.model", "CPH2381");
             break;
         case 21675: // IN
             OverrideProperty("ro.product.product.model", "RMX3360");
