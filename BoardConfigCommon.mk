@@ -76,7 +76,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # Fingerprint #TODO
-TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oplus:libudfps_extension.oplus
+#TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oplus:libudfps_extension.oplus
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
@@ -90,22 +90,11 @@ ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest_odm.xml
 # Init
 TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_oplus
 
-# Kernel #TODO
+# Kernel
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := \
-    androidboot.hardware=qcom \
-    androidboot.memcg=1 \
-    androidboot.usbcontroller=a600000.dwc3 \
-    cgroup.memory=nokmem,nosocket \
-    loop.max_part=7 \
-    lpm_levels.sleep_disabled=1 \
-    msm_rtb.filter=0x237 \
-    pcie_ports=compat \
-    service_locator.enable=1 \
-    swiotlb=0 \
-    ip6table_raw.raw_before_defrag=1 \
-    iptable_raw.raw_before_defrag=1
+BOARD_KERNEL_CMDLINE := cgroup_disable=pressure log_buf_len=256K rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kpti=off console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0x04C8C000 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=4e00000.dwc3 swiotlb=0 loop.max_part=7 cgroup.memory=nokmem,nosocket iptable_raw.raw_before_defrag=1 ip6table_raw.raw_before_defrag=1 kpti=off buildvariant=user  lk_version=V1.0 androidboot.startupmode=dc_charger androidboot.mode=reboot printk.disable_uart=1 short_c_feature_sw_status=0 phx_rus_conf.main_on=1 phx_rus_conf.recovery_method=2 phx_rus_conf.kernel_time=240 phx_rus_conf.android_time=250 smooth_soc_switch=0 simcardnum.doublesim=1 androidboot.prjname=21341 esim.status=0 androidboot.product.hardware.sku=2 androidboot.hw_region_id=0 androidboot.verifiedbootstate=orange androidboot.keymaster=1  androidboot.bootdevice=4804000.ufshc androidboot.fstab_suffix=default androidboot.boot_devices=soc/4804000.ufshc androidboot.serialno=a01d3e92 androidboot.baseband=msm msm_drm.dsi_display0=qcom,mdss_dsi_oplus21707_dsbj_ili7807s_fhd_plus_144fps_video: oplus_bsp_tp_custom.dsi_display0=qcom,mdss_dsi_oplus21707_dsbj_ili7807s_fhd_plus_144fps_video:tp_nt36672c_tm androidboot.slot_suffix=_a rootwait ro init=/init androidboot.dtbo_idx=23 androidboot.dtb_idx=0 androidboot.force_normal_boot=1
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -129,7 +118,7 @@ TARGET_BOARD_PLATFORM := holi
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
-# Partitions #TODO
+# Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 167772160
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 113600311296
